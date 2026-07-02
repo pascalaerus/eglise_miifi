@@ -3,79 +3,565 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - MIIFI</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Site officiel du Ministère International d'intercession Fils d'Israël (MIIFI) à Cotonou, dirigé par le Pasteur Fondateur Constantin KPOGBA. Découvrez nos programmes, notre jeunesse, et nos cultes.">
+    <title>MIIFI - Ministère International d'intercession Fils d'Israël</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <img src="assets/img/logo.jpg" alt="Logo MIIFI">
-                <span>MIIFI</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="jeunesse.html">Jeunesse</a></li>
-                <li><a href="evangelistes.html">Évangélistes</a></li>
-                <li><a href="programmes.html">Programmes</a></li>
-                <li><a href="programmes-speciaux.html">Spéciaux</a></li>
-                <li><a href="dons.html">Dons</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </div>
-    </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Ministère International d'intercession Fils d'Israël</h1>
-            <p>Bienvenue sur notre site officiel. Un lieu de transformation spirituelle.</p>
-            <a href="programmes.html" class="btn">Voir nos Programmes</a>
+    <!-- Header / Navigation -->
+    <header class="main-header" id="header">
+        <div class="container header-container">
+            <a href="#home" class="logo-area">
+                <img src="assets/logo.jpg" alt="MIIFI Logo" class="logo-img" id="church-logo">
+                <div class="logo-text">
+                    <span class="logo-title">MIIFI</span>
+                    <span class="logo-subtitle">Ministère Fils d'Israël</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Accueil</a></li>
+                    <li><a href="#founder" class="nav-link">Fondateur</a></li>
+                    <li><a href="#evangelists" class="nav-link">Évangélistes</a></li>
+                    <li><a href="#youth" class="nav-link">Jeunesse</a></li>
+                    <li><a href="#programs" class="nav-link">Programmes</a></li>
+                    <li><a href="#donations" class="nav-link">Dons & Offrandes</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Actions -->
+            <div class="header-actions">
+                <a href="https://wa.me/22966304937" target="_blank" class="btn btn-whatsapp-header" id="header-whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> <span class="header-wa-text">+229 66 30 49 37</span>
+                </a>
+                <button class="mobile-toggle-btn" id="mobile-toggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Notre Fondateur</h2>
-            <div class="founder-grid">
-                <div class="founder-img">
-                    <div class="img-placeholder">
-                        <i class="fas fa-user-tie"></i>
-                        <p>Pasteur Constantin KPOGBA</p>
-                    </div>
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobile-nav">
+        <button class="mobile-close-btn" id="mobile-close" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul>
+            <li><a href="#home" class="mobile-link">Accueil</a></li>
+            <li><a href="#founder" class="mobile-link">Fondateur</a></li>
+            <li><a href="#evangelists" class="mobile-link">Évangélistes</a></li>
+            <li><a href="#youth" class="mobile-link">Jeunesse</a></li>
+            <li><a href="#programs" class="mobile-link">Programmes</a></li>
+            <li><a href="#donations" class="mobile-link">Dons & Offrandes</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+        <div class="mobile-socials">
+            <a href="https://www.facebook.com/profile.php?id=100086230265988" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/22966304937" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home" style="background-image: linear-gradient(rgba(11, 27, 61, 0.85), rgba(11, 27, 61, 0.95)), url('assets/church_hero.png');">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-tag animate-fade-in">Bienvenue au Ministère Fils d'Israël</span>
+                <h1 class="hero-title animate-slide-up" id="main-hero-title">Ministère International d'intercession Fils d'Israël (MIIFI)</h1>
+                <p class="hero-lead animate-slide-up-delayed">Un lieu de prière, de combat spirituel, de délivrance et d'adoration. Rejoignez-nous pour expérimenter la puissance de Dieu à travers l'intercession.</p>
+                <div class="hero-actions animate-slide-up-more">
+                    <a href="#programs" class="btn btn-primary" id="hero-programs-btn">Voir nos Programmes</a>
+                    <a href="#contact" class="btn btn-outline" id="hero-contact-btn">Nous Rejoindre</a>
                 </div>
-                <div class="founder-text">
-                    <h3>Pasteur Constantin KPOGBA</h3>
-                    <p>Visionnaire du MIIFI, le Pasteur Constantin KPOGBA dédie sa vie à l'intercession et à l'enseignement de la Parole de Dieu pour le salut des nations.</p>
+            </div>
+            <div class="hero-badge-card animate-scale-in">
+                <div class="badge-icon"><i class="fa-solid fa-place-of-worship"></i></div>
+                <div class="badge-text">
+                    <h4>Culte Principal</h4>
+                    <p>Dimanche: 9h00 - 12h30</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
+    <!-- Pastor Section (Word from the Founder) -->
+    <section class="section founder-section" id="founder">
         <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3>MIIFI</h3>
-                    <p>Ministère International d'intercession Fils d'Israël</p>
+            <div class="grid grid-2">
+                <div class="image-wrapper reveal-left">
+                    <img src="assets/pastor.png" alt="Pasteur Constantin KPOGBA" class="founder-img" id="founder-photo">
+                    <div class="image-backdrop"></div>
+                    <div class="founder-card-label">
+                        <h4>Pasteur Constantin KPOGBA</h4>
+                        <p>Pasteur Fondateur du MIIFI</p>
+                    </div>
                 </div>
-                <div>
-                    <h3>Contact</h3>
-                    <p>WhatsApp: +229 66 30 49 37</p>
-                    <p>Email: contact@miifi-eglise.org</p>
-                    <p><a href="https://www.facebook.com/profile.php?id=100086230265988" target="_blank" class="facebook-link"><i class="fab fa-facebook"></i> Suivez-nous sur Facebook</a></p>
-                    <p><strong>Adresse :</strong> Cotonou, Akpakpa VON face à la Mairie d'Ayelawadje, après la station MG en allant à Africando, 2ème maison à droite.</p>
+                <div class="content-wrapper reveal-right">
+                    <span class="section-subtitle">Le Pasteur Fondateur</span>
+                    <h2 class="section-title">Message du Pasteur Constantin KPOGBA</h2>
+                    <p class="paragraph">
+                        "Bien-aimés dans le Seigneur, c'est une joie immense de vous accueillir sur la plateforme numérique du Ministère International d'intercession Fils d'Israël (MIIFI). Notre appel est de dresser un autel d'intercession pour briser les jougs, proclamer la délivrance des captifs et préparer un peuple saint pour le retour de Christ."
+                    </p>
+                    <p class="paragraph">
+                        Que vous cherchiez un refuge spirituel, un soutien dans la prière ou un enseignement biblique solide pour affermir votre foi, sachez que les portes de notre ministère vous sont grandement ouvertes. Nous croyons en un Dieu vivant qui répond par le feu de l'exaucement.
+                    </p>
+                    <div class="founder-contact-box">
+                        <div class="contact-box-info">
+                            <h5>Prendre rendez-vous avec le Pasteur</h5>
+                            <p><i class="fa-regular fa-clock"></i> Tous les Vendredis de 14h00 à 17h00</p>
+                        </div>
+                        <a href="https://wa.me/22966304937" target="_blank" class="btn btn-whatsapp" id="pastor-whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Contacter le Pasteur
+                        </a>
+                    </div>
                 </div>
             </div>
-            <p class="copy">&copy; 2026 MIIFI. Tous droits réservés.</p>
+        </div>
+    </section>
+
+    <!-- Evangelists Section -->
+    <section class="section bg-light evangelists-section" id="evangelists">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Nos Ouvriers dans la Moisson</span>
+                <h2 class="section-title">Le Corps des Évangélistes</h2>
+                <div class="title-bar mx-auto"></div>
+                <p class="section-desc">Des hommes et des femmes engagés pour la propagation de l'Évangile de Jésus-Christ et le salut des âmes.</p>
+            </div>
+            
+            <div class="grid grid-2 align-center">
+                <div class="reveal-left">
+                    <img src="assets/evangelists.png" alt="MIIFI Evangelists Team" class="img-responsive rounded shadow" id="evangelists-team-photo">
+                </div>
+                <div class="reveal-right">
+                    <h3 class="subsection-title">Ministère et Évangélisation</h3>
+                    <p class="paragraph">Nos évangélistes parcourent les quartiers, organisent des campagnes d'évangélisation et soutiennent les nouveaux convertis dans leur marche chrétienne. Ils sont à votre disposition pour le suivi spirituel et le partage de la Parole.</p>
+                    
+                    <div class="evangelists-list" id="evangelists-list">
+                        <!-- List of Evangelists -->
+                        <div class="evangelist-card">
+                            <div class="ev-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                            <div class="ev-details">
+                                <h4>Évangéliste [Nom à ajouter]</h4>
+                                <p class="ev-role">Évangélisation & Suivi</p>
+                                <a href="tel:+22966304937" class="ev-contact"><i class="fa-solid fa-phone"></i> +229 66 30 49 37</a>
+                            </div>
+                        </div>
+                        <div class="evangelist-card">
+                            <div class="ev-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                            <div class="ev-details">
+                                <h4>Évangéliste [Nom à ajouter]</h4>
+                                <p class="ev-role">Implantation & Intercession</p>
+                                <a href="tel:+22966304937" class="ev-contact"><i class="fa-solid fa-phone"></i> +229 66 30 49 37</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="#contact" class="btn btn-primary-light">Rejoindre l'équipe d'évangélisation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Youth Section -->
+    <section class="section youth-section" id="youth" style="background-image: linear-gradient(rgba(11, 27, 61, 0.9), rgba(11, 27, 61, 0.92)), url('assets/youth_leaders.png'); background-attachment: fixed; background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle color-gold">La Force de Demain</span>
+                <h2 class="section-title text-white">Jeunesse de MIIFI</h2>
+                <div class="title-bar bg-gold mx-auto"></div>
+            </div>
+
+            <!-- Youth Slogan Billboard -->
+            <div class="slogan-billboard reveal-up">
+                <div class="slogan-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <div class="slogan-slides">
+                    <p class="slogan-item slogan-active">Jeunesse de MIIFI : Gloire et Succès !</p>
+                    <p class="slogan-item">Jeunesse de MIIFI : Gloire et Succès !</p>
+                    <p class="slogan-item text-gold">Jeunesse de MIIFI : Gloire et Succès, exemple pour ma génération !</p>
+                </div>
+                <div class="slogan-bullets">
+                    <span class="bullet active" data-index="0"></span>
+                    <span class="bullet" data-index="1"></span>
+                    <span class="bullet" data-index="2"></span>
+                </div>
+            </div>
+
+            <div class="grid grid-2 mt-5">
+                <div class="reveal-left text-white">
+                    <h3 class="subsection-title text-white">Notre Vision pour la Jeunesse</h3>
+                    <p class="paragraph">La Jeunesse du MIIFI est un rassemblement dynamique de jeunes chrétiens désireux de vivre une vie consacrée, de manifester leurs talents et de devenir des modèles dans la société. À travers des partages, des enseignements adaptés et des activités de communion fraternelle, nous formons une génération forte et victorieuse.</p>
+                    <ul class="bullet-list-gold">
+                        <li><i class="fa-solid fa-check"></i> Consolidation de la foi chrétienne face aux défis modernes</li>
+                        <li><i class="fa-solid fa-check"></i> Ateliers de leadership et développement personnel</li>
+                        <li><i class="fa-solid fa-check"></i> Moments d'impact, de louange et d'évangélisation des jeunes</li>
+                    </ul>
+                </div>
+
+                <div class="reveal-right">
+                    <div class="youth-leader-card">
+                        <div class="leader-image-container">
+                            <img src="assets/youth_leaders.png" alt="Présidence des jeunes MIIFI" class="leader-img" id="youth-leader-photo">
+                            <div class="leader-overlay">
+                                <div class="leader-meta">
+                                    <h4>Président de la Jeunesse</h4>
+                                    <p>Présidence & Bureau MIIFI Jeunesse</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leader-details">
+                            <h4>[Nom du Président à ajouter]</h4>
+                            <p class="leader-role">Président de la Jeunesse MIIFI</p>
+                            <div class="leader-actions">
+                                <a href="https://wa.me/22966304937" target="_blank" class="btn btn-whatsapp btn-sm" id="youth-president-wa-btn">
+                                    <i class="fab fa-whatsapp"></i> Contacter le Bureau des Jeunes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="section programs-section" id="programs">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Nos Rendez-vous avec Dieu</span>
+                <h2 class="section-title">Calendrier des Programmes</h2>
+                <div class="title-bar mx-auto"></div>
+                <p class="section-desc">Rejoignez-nous lors de nos différents cultes et réunions de prières hebdomadaires.</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-container reveal-up">
+                <div class="tab-navigation" role="tablist">
+                    <button class="tab-btn active" id="tab-weekly" role="tab" aria-selected="true" aria-controls="weekly-pane">
+                        <i class="fa-regular fa-calendar-days"></i> Programmes Hebdomadaires
+                    </button>
+                    <button class="tab-btn" id="tab-special" role="tab" aria-selected="false" aria-controls="special-pane">
+                        <i class="fa-solid fa-star"></i> Programmes Spéciaux
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content Panes -->
+            <div class="tab-content mt-4">
+                <!-- Weekly Programs -->
+                <div class="tab-pane active" id="weekly-pane" role="tabpanel">
+                    <div class="programs-grid">
+                        
+                        <!-- Lundi -->
+                        <div class="program-card reveal-up" data-delay="1">
+                            <div class="prog-day">Lundi</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 20h00 - 21h30</div>
+                            <h3 class="prog-title">Programme des hommes</h3>
+                            <p class="prog-desc">Réunion d'édification, de partage et de prière réservée aux hommes de l'église.</p>
+                            <div class="prog-badge badge-men">Hommes</div>
+                        </div>
+
+                        <!-- Mardi -->
+                        <div class="program-card reveal-up" data-delay="2">
+                            <div class="prog-day">Mardi</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 20h00 - 21h30</div>
+                            <h3 class="prog-title">Enseignement Biblique</h3>
+                            <p class="prog-desc">Étude approfondie de la Parole de Dieu pour grandir spirituellement et connaître la vérité.</p>
+                            <div class="prog-badge badge-all">Tous publics</div>
+                        </div>
+
+                        <!-- Mercredi -->
+                        <div class="program-card reveal-up" data-delay="3">
+                            <div class="prog-day">Mercredi</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 20h00 - 21h30</div>
+                            <h3 class="prog-title">Programme des femmes</h3>
+                            <p class="prog-desc">Moments d'intercession, d'apprentissage et de communion fraternelle pour les femmes.</p>
+                            <div class="prog-badge badge-women">Femmes</div>
+                        </div>
+
+                        <!-- Jeudi -->
+                        <div class="program-card highlight reveal-up" data-delay="4">
+                            <div class="prog-day">Jeudi</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 20h00 - 21h30</div>
+                            <h3 class="prog-title">Prière de Combat & Délivrance</h3>
+                            <p class="prog-desc">Séance intense d'intercession et de combat spirituel pour briser les liens et proclamer la liberté.</p>
+                            <div class="prog-badge badge-power">Délivrance</div>
+                        </div>
+
+                        <!-- Vendredi (Rencontres) -->
+                        <div class="program-card reveal-up" data-delay="5">
+                            <div class="prog-day">Vendredi</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 14h00 - 17h00</div>
+                            <h3 class="prog-title">Rencontres avec le Pasteur</h3>
+                            <p class="prog-desc">Entretiens individuels, conseils spirituels et prières personnalisées avec le Pasteur Constantin KPOGBA.</p>
+                            <div class="prog-badge badge-office">Bureau</div>
+                        </div>
+
+                        <!-- Dimanche (Culte) -->
+                        <div class="program-card highlight-gold reveal-up" data-delay="6">
+                            <div class="prog-day">Dimanche</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 9h00 - 12h30</div>
+                            <h3 class="prog-title">Culte de Louange & Adoration</h3>
+                            <p class="prog-desc">Célébration dominicale, louange inspirée, adoration intense et prédication de l'Évangile.</p>
+                            <div class="prog-badge badge-worship">Culte principal</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Special Programs -->
+                <div class="tab-pane" id="special-pane" role="tabpanel">
+                    <div class="special-programs-container">
+                        
+                        <!-- Monthly Vigil -->
+                        <div class="special-program-card reveal-up">
+                            <div class="sp-date">
+                                <span class="sp-day">V</span>
+              <span class="sp-month">Mensuel</span>
+                            </div>
+                            <div class="sp-content">
+                                <span class="sp-tag">Grande Veillée de Prière</span>
+                                <h3>Tous les derniers Vendredis du Mois</h3>
+                                <p class="sp-time"><i class="fa-regular fa-clock"></i> 00h00 - 04h00 (Minuit à 4h du matin)</p>
+                                <p class="sp-desc">Une nuit entière dans la présence de Dieu : prières de percée, brisement de malédictions, louange nocturne et intercession prophétique.</p>
+                            </div>
+                        </div>
+
+                        <!-- Crusade Mock -->
+                        <div class="special-program-card reveal-up" data-delay="1">
+                            <div class="sp-date">
+                                <span class="sp-day">S</span>
+                                <span class="sp-month">Spécial</span>
+                            </div>
+                            <div class="sp-content">
+                                <span class="sp-tag">Séminaire / Campagne</span>
+                                <h3>Programmes Spéciaux de Fin d'Année et Festivités</h3>
+                                <p class="sp-time"><i class="fa-solid fa-circle-info"></i> Les dates et détails seront communiqués par le Pasteur</p>
+                                <p class="sp-desc">Restez à l'écoute pour nos programmes spéciaux d'impact spirituel, conventions annuelles et croisades d'évangélisation.</p>
+                                <a href="https://wa.me/22966304937" target="_blank" class="btn btn-link" id="special-program-info-btn">Demander des informations <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donations & Offerings -->
+    <section class="section bg-light donations-section" id="donations">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Soutenir l'œuvre de Dieu</span>
+                <h2 class="section-title">Dons, Offrandes et Dîmes</h2>
+                <div class="title-bar mx-auto"></div>
+                <p class="section-desc">« Apportez toutes les dîmes à la maison du trésor... » — Malachie 3:10. Participez à l'avancement du royaume de Dieu et à la logistique de notre église.</p>
+            </div>
+
+            <div class="grid grid-2 mt-5">
+                <!-- Western Union -->
+                <div class="donation-card reveal-left">
+                    <div class="donation-icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                    <h3>Western Union & Transferts Internationaux</h3>
+                    <p class="donation-info-text">Pour vos dons et dîmes depuis l'étranger, vous pouvez effectuer un envoi Western Union ou MoneyGram avec les coordonnées suivantes :</p>
+                    <div class="payment-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Nom :</span>
+                            <strong class="detail-val">KPOGBA</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Prénoms :</span>
+                            <strong class="detail-val">YAO CONSTANTIN</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Pays :</span>
+                            <strong class="detail-val">Bénin</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Ville :</span>
+                            <strong class="detail-val">Cotonou</strong>
+                        </div>
+                    </div>
+                    <div class="donation-notice">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>Veuillez envoyer une copie du reçu ou le code de transfert (MTCN) au Pasteur via WhatsApp après validation.</span>
+                    </div>
+                </div>
+
+                <!-- MTN Mobile Money -->
+                <div class="donation-card highlight-momo reveal-right">
+                    <div class="donation-icon momo-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>MTN Mobile Money (MoMo)</h3>
+                    <p class="donation-info-text">Pour des transferts nationaux et sous-régionaux simplifiés, utilisez notre compte MTN MoMo sécurisé :</p>
+                    <div class="payment-details momo-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Numéro Momo :</span>
+                            <strong class="detail-val color-momo">01 66 30 49 37</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Nom du compte :</span>
+                            <strong class="detail-val">Constantin KPOGBA</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Réseau :</span>
+                            <strong class="detail-val">MTN Bénin</strong>
+                        </div>
+                    </div>
+                    <div class="momo-badge">
+                        <span>Disponible 24h/24</span>
+                    </div>
+                    <div class="donation-notice text-dark">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Les frais de retrait sont pris en charge par le ministère pour s'assurer que l'intégralité de votre offrande parvienne à l'autel.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="donation-footer text-center mt-5 reveal-up">
+                <a href="https://wa.me/22966304937" target="_blank" class="btn btn-outline-primary" id="confirm-donation-btn">
+                    <i class="fab fa-whatsapp"></i> Confirmer un transfert ou faire une requête
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Nous Rendre Visite</span>
+                <h2 class="section-title">Nous Contacter & Localisation</h2>
+                <div class="title-bar mx-auto"></div>
+            </div>
+
+            <div class="grid grid-2 mt-5">
+                <!-- Location Details -->
+                <div class="reveal-left">
+                    <h3 class="subsection-title">Coordonnées du Ministère</h3>
+                    <p class="paragraph">N'hésitez pas à nous appeler, à nous envoyer un message WhatsApp ou à venir directement participer à l'un de nos glorieux programmes.</p>
+                    
+                    <div class="contact-info-list">
+                        
+                        <div class="contact-info-item">
+                            <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="ci-text">
+                                <h4>Adresse Physique</h4>
+                                <p>MIIFI sise à Cotonou, Akpakpa VON face à la Mairie d'Ayelawadje après la station MG en allant à Africando, 2ème maison à droite.</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="ci-text">
+                                <h4>Téléphone & WhatsApp</h4>
+                                <p><a href="tel:+22966304937" class="contact-link">+229 66 30 49 37</a> (Pasteur Constantin KPOGBA)</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="ci-icon"><i class="fa-brands fa-facebook"></i></div>
+                            <div class="ci-text">
+                                <h4>Page Facebook Officielle</h4>
+                                <p><a href="https://www.facebook.com/profile.php?id=100086230265988" target="_blank" class="contact-link">Ministère Fils d'Israël - MIIFI</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Interactive Form & Map visual -->
+                <div class="reveal-right">
+                    <div class="contact-card">
+                        <h3>Envoyer un Message Rapide</h3>
+                        <p class="small-text">Remplissez ce formulaire et votre message sera pré-configuré pour un envoi direct sur le WhatsApp du secrétariat du Pasteur.</p>
+                        
+                        <form id="contact-whatsapp-form" class="mt-3">
+                            <div class="form-group">
+                                <label for="form-name">Votre Nom et Prénoms *</label>
+                                <input type="text" id="form-name" placeholder="Ex: Jean Gnonlonfoun" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-subject">Sujet du Message *</label>
+                                <select id="form-subject" class="form-control" required>
+                                    <option value="Demande de Prière / Délivrance">Demande de Prière / Délivrance</option>
+                                    <option value="Prise de RDV avec le Pasteur">Prise de RDV avec le Pasteur</option>
+                                    <option value="Informations sur la Jeunesse / Évangélisation">Informations sur la Jeunesse / Évangélisation</option>
+                                    <option value="Confirmation de Don / Dîme">Confirmation de Don / Dîme</option>
+                                    <option value="Autre demande">Autre demande</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">Votre Message *</label>
+                                <textarea id="form-message" rows="4" placeholder="Écrivez votre message de prière, demande ou salutations ici..." required class="form-control"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                                <i class="fab fa-whatsapp"></i> Envoyer via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-top">
+            <div class="footer-grid">
+                
+                <div class="footer-brand-col">
+                    <div class="footer-logo">
+                        <img src="assets/logo.jpg" alt="MIIFI Logo" class="footer-logo-img">
+                        <h3>MIIFI</h3>
+                    </div>
+                    <p class="footer-about">Ministère International d'intercession Fils d'Israël. Un phare spirituel à Cotonou, annonçant l'exaucement par le feu de la prière.</p>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100086230265988" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/22966304937" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#founder">Le Pasteur Fondateur</a></li>
+                        <li><a href="#evangelists">Les Évangélistes</a></li>
+                        <li><a href="#youth">Jeunesse MIIFI</a></li>
+                        <li><a href="#programs">Nos Programmes</a></li>
+                        <li><a href="#donations">Soutenir le Ministère</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact-col">
+                    <h4>Notre Adresse</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Akpakpa VON face à la Mairie d'Ayelawadje après la station MG en allant à Africando, 2ème maison à droite. Cotonou, Bénin.</p>
+                    <p><i class="fa-solid fa-phone"></i> +229 66 30 49 37</p>
+                    <p><i class="fa-solid fa-envelope"></i> a ajouter (contact administratif)</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 MIIFI - Ministère International d'intercession Fils d'Israël. Tous droits réservés.</p>
+                <p>Propulsé dans la Foi. Conçu pour la gloire de Dieu.</p>
+            </div>
         </div>
     </footer>
-    <script src="assets/js/main.js"></script>
+
+    <!-- Custom JS -->
+    <script src="index.js"></script>
 </body>
 </html>
