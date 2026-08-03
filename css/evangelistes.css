@@ -1,0 +1,66 @@
+/* ===== MIIFI - Styles page: evangelistes ===== */
+
+/* --- Evangelists Section --- */
+.evangelists-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 32px;
+}
+
+.evangelist-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--bg-white);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.evangelist-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.ev-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--primary);
+    border: 2px solid var(--accent-light);
+}
+
+.ev-details h4 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.ev-role {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.ev-contact {
+    font-size: 14px;
+    color: var(--primary-light);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ev-contact:hover {
+    color: var(--accent-dark);
+}

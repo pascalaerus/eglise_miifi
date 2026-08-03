@@ -1,0 +1,147 @@
+/* ===== MIIFI - Styles page: jeunesse ===== */
+
+/* --- Youth Section --- */
+.slogan-billboard {
+    background-color: rgba(15, 37, 87, 0.8);
+    backdrop-filter: blur(12px);
+    border: 2px solid var(--accent);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    max-width: 800px;
+    margin: 40px auto 0;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.slogan-icon {
+    font-size: 32px;
+    color: var(--accent);
+    opacity: 0.3;
+    margin-bottom: 12px;
+}
+
+.slogan-slides {
+    position: relative;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slogan-item {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bg-white);
+    position: absolute;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    width: 100%;
+}
+
+.slogan-item.slogan-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slogan-bullets {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.slogan-bullets .bullet {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.slogan-bullets .bullet.active {
+    background-color: var(--accent);
+    transform: scale(1.3);
+}
+
+.bullet-list-gold {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bullet-list-gold li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.bullet-list-gold li i {
+    color: var(--accent);
+    margin-top: 4px;
+}
+
+.youth-leader-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.leader-image-container {
+    position: relative;
+    height: 320px;
+}
+
+.leader-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leader-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 24px 20px;
+    background: linear-gradient(transparent, rgba(7, 18, 45, 0.95));
+}
+
+.leader-meta h4 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--bg-white);
+}
+
+.leader-meta p {
+    font-size: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.leader-details {
+    padding: 24px;
+}
+
+.leader-details h4 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.leader-role {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}

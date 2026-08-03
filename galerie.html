@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Site officiel du Ministère International d'intercession Fils d'Israël (MIIFI) à Cotonou, dirigé par le Pasteur Fondateur Constantin KPOGBA. Découvrez nos programmes, notre jeunesse, et nos cultes.">
-    <title>MIIFI - Accueil | Ministère International d'intercession Fils d'Israël</title>
+    <title>Galerie Photos - MIIFI</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,11 @@
     <!-- Styles communs -->
     <link rel="stylesheet" href="common.css">
     <!-- Style propre a cette page -->
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/galerie.css">
 </head>
 <body>
     <!-- Header / Navigation -->
-    <header class="main-header" id="header">
+    <header class="main-header header-solid" id="header">
         <div class="container header-container">
             <a href="index.html" class="logo-area">
                 <img src="logo.jpg" alt="MIIFI Logo" class="logo-img" id="church-logo">
@@ -31,12 +31,12 @@
             <!-- Desktop Navigation -->
             <nav class="nav-menu" id="nav-menu">
                 <ul>
-                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="fondateur.html" class="nav-link">Fondateur</a></li>
                     <li><a href="evangelistes.html" class="nav-link">Évangélistes</a></li>
                     <li><a href="jeunesse.html" class="nav-link">Jeunesse</a></li>
                     <li><a href="programmes.html" class="nav-link">Programmes</a></li>
-                    <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+                    <li><a href="galerie.html" class="nav-link active">Galerie</a></li>
                     <li><a href="dons.html" class="nav-link">Dons & Offrandes</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="radio.html" class="nav-link">Radio</a></li>
@@ -61,12 +61,12 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
         <ul>
-            <li><a href="index.html" class="mobile-link active">Accueil</a></li>
+            <li><a href="index.html" class="mobile-link">Accueil</a></li>
             <li><a href="fondateur.html" class="mobile-link">Fondateur</a></li>
             <li><a href="evangelistes.html" class="mobile-link">Évangélistes</a></li>
             <li><a href="jeunesse.html" class="mobile-link">Jeunesse</a></li>
             <li><a href="programmes.html" class="mobile-link">Programmes</a></li>
-            <li><a href="galerie.html" class="mobile-link">Galerie</a></li>
+            <li><a href="galerie.html" class="mobile-link active">Galerie</a></li>
             <li><a href="dons.html" class="mobile-link">Dons & Offrandes</a></li>
             <li><a href="contact.html" class="mobile-link">Contact</a></li>
             <li><a href="radio.html" class="mobile-link">Radio</a></li>
@@ -77,27 +77,47 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="home" style="background-image: linear-gradient(rgba(11, 27, 61, 0.85), rgba(11, 27, 61, 0.95)), url('assets/church_hero.png');">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <span class="hero-tag animate-fade-in">Bienvenue au Ministère Fils d'Israël</span>
-                <h1 class="hero-title animate-slide-up" id="main-hero-title">Ministère International d'intercession Fils d'Israël (MIIFI)</h1>
-                <p class="hero-lead animate-slide-up-delayed">Un lieu de prière, de combat spirituel, de délivrance et d'adoration. Rejoignez-nous pour expérimenter la puissance de Dieu à travers l'intercession.</p>
-                <div class="hero-actions animate-slide-up-more">
-                    <a href="programmes.html" class="btn btn-primary" id="hero-programs-btn">Voir nos Programmes</a>
-                    <a href="contact.html" class="btn btn-outline" id="hero-contact-btn">Nous Rejoindre</a>
-                </div>
-            </div>
-            <div class="hero-badge-card animate-scale-in">
-                <div class="badge-icon"><i class="fa-solid fa-place-of-worship"></i></div>
-                <div class="badge-text">
-                    <h4>Culte Principal</h4>
-                    <p>Dimanche: 9h00 - 12h30</p>
-                </div>
-            </div>
+    <!-- Photo Gallery Section -->
+<section class="section bg-light gallery-section" id="gallery">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-subtitle">Nos Moments Forts</span>
+            <h2 class="section-title">Galerie Photos</h2>
+            <div class="title-bar mx-auto"></div>
+            <p class="section-desc">Revivez en images nos cultes, programmes et moments de communion fraternelle.</p>
         </div>
-    </section>
+
+        <div class="gallery-grid mt-5">
+            <div class="gallery-item reveal-up"><img src="photo1.jpg" alt="Photo MIIFI 1"></div>
+            <div class="gallery-item reveal-up" data-delay="1"><img src="photo2.jpg" alt="Photo MIIFI 2"></div>
+            <div class="gallery-item reveal-up" data-delay="2"><img src="photo3.jpg" alt="Photo MIIFI 3"></div>
+            <div class="gallery-item reveal-up" data-delay="3"><img src="photo4.jpg" alt="Photo MIIFI 4"></div>
+            <div class="gallery-item reveal-up" data-delay="4"><img src="photo5.jpg" alt="Photo MIIFI 5"></div>
+            <div class="gallery-item reveal-up" data-delay="5"><img src="photo6.jpg" alt="Photo MIIFI 6"></div>
+            <div class="gallery-item reveal-up" data-delay="6"><img src="photo7.jpg" alt="Photo MIIFI 7"></div>
+            <div class="gallery-item reveal-up" data-delay="7"><img src="photo8.jpg" alt="Photo MIIFI 8"></div>
+            <div class="gallery-item reveal-up" data-delay="8"><img src="photo9.jpg" alt="Photo MIIFI 9"></div>
+            <div class="gallery-item reveal-up" data-delay="9"><img src="photo10.jpg" alt="Photo MIIFI 10"></div>
+            <div class="gallery-item reveal-up" data-delay="10"><img src="photo11.jpg" alt="Photo MIIFI 11"></div>
+            <div class="gallery-item reveal-up" data-delay="11"><img src="photo12.jpg" alt="Photo MIIFI 12"></div>
+            <div class="gallery-item reveal-up" data-delay="12"><img src="photo13.jpg" alt="Photo MIIFI 13"></div>
+            <div class="gallery-item reveal-up" data-delay="13"><img src="photo14.jpg" alt="Photo MIIFI 14"></div>
+            <div class="gallery-item reveal-up" data-delay="14"><img src="photo15.jpg" alt="Photo MIIFI 15"></div>
+            <div class="gallery-item reveal-up" data-delay="15"><img src="photo16.jpg" alt="Photo MIIFI 16"></div>
+            <div class="gallery-item reveal-up" data-delay="16"><img src="photo17.jpg" alt="Photo MIIFI 17"></div>
+            <div class="gallery-item reveal-up" data-delay="17"><img src="photo18.jpg" alt="Photo MIIFI 18"></div>
+            <div class="gallery-item reveal-up" data-delay="18"><img src="photo19.jpg" alt="Photo MIIFI 19"></div>
+            <div class="gallery-item reveal-up" data-delay="19"><img src="photo20.jpg" alt="Photo MIIFI 20"></div>
+            <div class="gallery-item reveal-up" data-delay="20"><img src="photo21.jpg" alt="Photo MIIFI 21"></div>
+            <div class="gallery-item reveal-up" data-delay="21"><img src="photo22.jpg" alt="Photo MIIFI 22"></div>
+            <div class="gallery-item reveal-up" data-delay="22"><img src="photo23.jpg" alt="Photo MIIFI 23"></div>
+            <div class="gallery-item reveal-up" data-delay="23"><img src="photo24.jpg" alt="Photo MIIFI 24"></div>
+            <div class="gallery-item reveal-up" data-delay="24"><img src="photo25.jpg" alt="Photo MIIFI 25"></div>
+            <div class="gallery-item reveal-up" data-delay="25"><img src="photo26.jpg" alt="Photo MIIFI 26"></div>
+            <div class="gallery-item reveal-up" data-delay=26"><img src="photo27.jpg" alt="Photo MIIFI 27"></div>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="main-footer">

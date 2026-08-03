@@ -1,0 +1,129 @@
+/* ===== MIIFI - Styles page: dons ===== */
+
+/* --- Donations Section --- */
+.donation-card {
+    background-color: var(--bg-white);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.donation-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.donation-icon {
+    width: 64px;
+    height: 64px;
+    background-color: var(--accent-light);
+    color: var(--accent-dark);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+.donation-card h3 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 16px;
+}
+
+.donation-info-text {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.payment-details {
+    background-color: var(--bg-light);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+    padding-bottom: 8px;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.detail-val {
+    font-size: 15px;
+    color: var(--primary-dark);
+}
+
+.donation-notice {
+    background-color: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--accent-dark);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.donation-notice i {
+    margin-top: 3px;
+}
+
+
+/* Momo Specifics */
+.donation-card.highlight-momo {
+    border-left: 6px solid var(--momo-color);
+}
+
+.momo-icon {
+    background-color: rgba(255, 204, 0, 0.1);
+    color: #cca300;
+}
+
+.momo-details {
+    background-color: rgba(255, 204, 0, 0.04);
+}
+
+.color-momo {
+    color: var(--primary-dark);
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.momo-badge {
+    align-self: flex-start;
+    background-color: var(--momo-color);
+    color: var(--primary-dark);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}

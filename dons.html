@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Site officiel du Ministère International d'intercession Fils d'Israël (MIIFI) à Cotonou, dirigé par le Pasteur Fondateur Constantin KPOGBA. Découvrez nos programmes, notre jeunesse, et nos cultes.">
-    <title>MIIFI - Accueil | Ministère International d'intercession Fils d'Israël</title>
+    <title>Dons, Offrandes & Dîmes - MIIFI</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,11 @@
     <!-- Styles communs -->
     <link rel="stylesheet" href="common.css">
     <!-- Style propre a cette page -->
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/dons.css">
 </head>
 <body>
     <!-- Header / Navigation -->
-    <header class="main-header" id="header">
+    <header class="main-header header-solid" id="header">
         <div class="container header-container">
             <a href="index.html" class="logo-area">
                 <img src="logo.jpg" alt="MIIFI Logo" class="logo-img" id="church-logo">
@@ -31,13 +31,13 @@
             <!-- Desktop Navigation -->
             <nav class="nav-menu" id="nav-menu">
                 <ul>
-                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="fondateur.html" class="nav-link">Fondateur</a></li>
                     <li><a href="evangelistes.html" class="nav-link">Évangélistes</a></li>
                     <li><a href="jeunesse.html" class="nav-link">Jeunesse</a></li>
                     <li><a href="programmes.html" class="nav-link">Programmes</a></li>
                     <li><a href="galerie.html" class="nav-link">Galerie</a></li>
-                    <li><a href="dons.html" class="nav-link">Dons & Offrandes</a></li>
+                    <li><a href="dons.html" class="nav-link active">Dons & Offrandes</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="radio.html" class="nav-link">Radio</a></li>
                 </ul>
@@ -61,13 +61,13 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
         <ul>
-            <li><a href="index.html" class="mobile-link active">Accueil</a></li>
+            <li><a href="index.html" class="mobile-link">Accueil</a></li>
             <li><a href="fondateur.html" class="mobile-link">Fondateur</a></li>
             <li><a href="evangelistes.html" class="mobile-link">Évangélistes</a></li>
             <li><a href="jeunesse.html" class="mobile-link">Jeunesse</a></li>
             <li><a href="programmes.html" class="mobile-link">Programmes</a></li>
             <li><a href="galerie.html" class="mobile-link">Galerie</a></li>
-            <li><a href="dons.html" class="mobile-link">Dons & Offrandes</a></li>
+            <li><a href="dons.html" class="mobile-link active">Dons & Offrandes</a></li>
             <li><a href="contact.html" class="mobile-link">Contact</a></li>
             <li><a href="radio.html" class="mobile-link">Radio</a></li>
         </ul>
@@ -77,24 +77,79 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="home" style="background-image: linear-gradient(rgba(11, 27, 61, 0.85), rgba(11, 27, 61, 0.95)), url('assets/church_hero.png');">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <span class="hero-tag animate-fade-in">Bienvenue au Ministère Fils d'Israël</span>
-                <h1 class="hero-title animate-slide-up" id="main-hero-title">Ministère International d'intercession Fils d'Israël (MIIFI)</h1>
-                <p class="hero-lead animate-slide-up-delayed">Un lieu de prière, de combat spirituel, de délivrance et d'adoration. Rejoignez-nous pour expérimenter la puissance de Dieu à travers l'intercession.</p>
-                <div class="hero-actions animate-slide-up-more">
-                    <a href="programmes.html" class="btn btn-primary" id="hero-programs-btn">Voir nos Programmes</a>
-                    <a href="contact.html" class="btn btn-outline" id="hero-contact-btn">Nous Rejoindre</a>
+    <!-- Donations & Offerings -->
+    <section class="section bg-light donations-section" id="donations">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Soutenir l'œuvre de Dieu</span>
+                <h2 class="section-title">Dons, Offrandes et Dîmes</h2>
+                <div class="title-bar mx-auto"></div>
+                <p class="section-desc">« Apportez toutes les dîmes à la maison du trésor... » — Malachie 3:10. Participez à l'avancement du royaume de Dieu et à la logistique de notre église.</p>
+            </div>
+
+            <div class="grid grid-2 mt-5">
+                <!-- Western Union -->
+                <div class="donation-card reveal-left">
+                    <div class="donation-icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                    <h3>Western Union & Transferts Internationaux</h3>
+                    <p class="donation-info-text">Pour vos dons et dîmes depuis l'étranger, vous pouvez effectuer un envoi Western Union ou MoneyGram avec les coordonnées suivantes :</p>
+                    <div class="payment-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Nom :</span>
+                            <strong class="detail-val">KPOGBA</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Prénoms :</span>
+                            <strong class="detail-val">YAO CONSTANTIN</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Pays :</span>
+                            <strong class="detail-val">Bénin</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Ville :</span>
+                            <strong class="detail-val">Cotonou</strong>
+                        </div>
+                    </div>
+                    <div class="donation-notice">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>Veuillez envoyer une copie du reçu ou le code de transfert (MTCN) au Pasteur via WhatsApp après validation.</span>
+                    </div>
+                </div>
+
+                <!-- MTN Mobile Money -->
+                <div class="donation-card highlight-momo reveal-right">
+                    <div class="donation-icon momo-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>MTN Mobile Money (MoMo)</h3>
+                    <p class="donation-info-text">Pour des transferts nationaux et sous-régionaux simplifiés, utilisez notre compte MTN MoMo sécurisé :</p>
+                    <div class="payment-details momo-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Numéro Momo :</span>
+                            <strong class="detail-val color-momo">01 66 30 49 37</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Nom du compte :</span>
+                            <strong class="detail-val">Constantin KPOGBA</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Réseau :</span>
+                            <strong class="detail-val">MTN Bénin</strong>
+                        </div>
+                    </div>
+                    <div class="momo-badge">
+                        <span>Disponible 24h/24</span>
+                    </div>
+                    <div class="donation-notice text-dark">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Les frais de retrait sont pris en charge par le ministère pour s'assurer que l'intégralité de votre offrande parvienne à l'autel.</span>
+                    </div>
                 </div>
             </div>
-            <div class="hero-badge-card animate-scale-in">
-                <div class="badge-icon"><i class="fa-solid fa-place-of-worship"></i></div>
-                <div class="badge-text">
-                    <h4>Culte Principal</h4>
-                    <p>Dimanche: 9h00 - 12h30</p>
-                </div>
+            
+            <div class="donation-footer text-center mt-5 reveal-up">
+                <a href="https://wa.me/22966304937" target="_blank" class="btn btn-outline-primary" id="confirm-donation-btn">
+                    <i class="fab fa-whatsapp"></i> Confirmer un transfert ou faire une requête
+                </a>
             </div>
         </div>
     </section>

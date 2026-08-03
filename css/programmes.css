@@ -1,0 +1,259 @@
+/* ===== MIIFI - Styles page: programmes ===== */
+
+/* --- Programs Section --- */
+.tab-container {
+    display: flex;
+    justify-content: center;
+}
+
+.tab-navigation {
+    display: inline-flex;
+    background-color: var(--bg-light);
+    padding: 6px;
+    border-radius: var(--radius-sm);
+    gap: 4px;
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-btn {
+    border: none;
+    background: transparent;
+    padding: 12px 24px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-muted);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    background-color: var(--primary);
+    color: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-btn i {
+    margin-right: 6px;
+}
+
+.tab-content .tab-pane {
+    display: none;
+}
+
+.tab-content .tab-pane.active {
+    display: block;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.program-card {
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(15, 37, 87, 0.1);
+}
+
+.program-card.highlight {
+    background-color: var(--primary);
+    color: var(--bg-white);
+    border-left: 6px solid var(--accent);
+}
+
+.program-card.highlight .prog-day {
+    color: var(--accent);
+}
+
+.program-card.highlight .prog-time i {
+    color: var(--accent);
+}
+
+.program-card.highlight .prog-desc {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.program-card.highlight-gold {
+    background-color: var(--accent);
+    color: var(--primary-dark);
+    border-left: 6px solid var(--primary);
+}
+
+.program-card.highlight-gold .prog-day {
+    color: var(--primary-dark);
+}
+
+.program-card.highlight-gold .prog-time i {
+    color: var(--primary-dark);
+}
+
+.program-card.highlight-gold .prog-desc {
+    color: rgba(7, 18, 45, 0.85);
+}
+
+.prog-day {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-light);
+    margin-bottom: 8px;
+}
+
+.prog-time {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.prog-time i {
+    margin-right: 4px;
+    color: var(--primary);
+}
+
+.prog-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.prog-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.prog-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-men { background-color: rgba(30, 62, 133, 0.1); color: var(--primary-light); }
+.badge-all { background-color: rgba(0, 0, 0, 0.05); color: var(--text-muted); }
+.badge-women { background-color: rgba(212, 175, 55, 0.15); color: var(--accent-dark); }
+.badge-power { background-color: rgba(255, 255, 255, 0.2); color: var(--accent); }
+.badge-office { background-color: rgba(0, 0, 0, 0.05); color: var(--text-muted); }
+.badge-worship { background-color: rgba(15, 37, 87, 0.15); color: var(--primary-dark); }
+
+
+/* --- Special Programs Section --- */
+.special-programs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.special-program-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.special-program-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.sp-date {
+    background-color: var(--primary);
+    color: var(--bg-white);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 140px;
+}
+
+.sp-day {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.sp-month {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+.sp-content {
+    padding: 30px;
+    flex-grow: 1;
+}
+
+.sp-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    background-color: var(--accent-light);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.sp-content h3 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+
+.sp-time {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-light);
+    margin-bottom: 16px;
+}
+
+.sp-time i { margin-right: 6px; }
+
+.sp-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+
+@media (min-width: 768px) {
+    .programs-grid { grid-template-columns: repeat(2, 1fr); }
+    .special-program-card { flex-direction: row; }
+}
+
+@media (min-width: 992px) {
+    .programs-grid { grid-template-columns: repeat(3, 1fr); }
+}

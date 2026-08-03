@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site officiel du Ministère International d'intercession Fils d'Israël (MIIFI) à Cotonou, dirigé par le Pasteur Fondateur Constantin KPOGBA. Découvrez nos programmes, notre jeunesse, et nos cultes.">
+    <title>Programmes & Culte - MIIFI</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles communs -->
+    <link rel="stylesheet" href="common.css">
+    <!-- Style propre a cette page -->
+    <link rel="stylesheet" href="css/programmes.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="main-header header-solid" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-area">
+                <img src="logo.jpg" alt="MIIFI Logo" class="logo-img" id="church-logo">
+                <div class="logo-text">
+                    <span class="logo-title">MIIFI</span>
+                    <span class="logo-subtitle">Ministère Fils d'Israël</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="fondateur.html" class="nav-link">Fondateur</a></li>
+                    <li><a href="evangelistes.html" class="nav-link">Évangélistes</a></li>
+                    <li><a href="jeunesse.html" class="nav-link">Jeunesse</a></li>
+                    <li><a href="programmes.html" class="nav-link active">Programmes</a></li>
+                    <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+                    <li><a href="dons.html" class="nav-link">Dons & Offrandes</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="radio.html" class="nav-link">Radio</a></li>
+                </ul>
+            </nav>
+
+            <!-- Actions -->
+            <div class="header-actions">
+                <a href="https://wa.me/22966304937" target="_blank" class="btn btn-whatsapp-header" id="header-whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> <span class="header-wa-text">+229 01 66 30 49 37</span>
+                </a>
+                <button class="mobile-toggle-btn" id="mobile-toggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobile-nav">
+        <button class="mobile-close-btn" id="mobile-close" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul>
+            <li><a href="index.html" class="mobile-link">Accueil</a></li>
+            <li><a href="fondateur.html" class="mobile-link">Fondateur</a></li>
+            <li><a href="evangelistes.html" class="mobile-link">Évangélistes</a></li>
+            <li><a href="jeunesse.html" class="mobile-link">Jeunesse</a></li>
+            <li><a href="programmes.html" class="mobile-link active">Programmes</a></li>
+            <li><a href="galerie.html" class="mobile-link">Galerie</a></li>
+            <li><a href="dons.html" class="mobile-link">Dons & Offrandes</a></li>
+            <li><a href="contact.html" class="mobile-link">Contact</a></li>
+            <li><a href="radio.html" class="mobile-link">Radio</a></li>
+        </ul>
+        <div class="mobile-socials">
+            <a href="https://www.facebook.com/profile.php?id=100086230265988" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/2290166304937" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- Programs Section -->
+    <section class="section programs-section" id="programs">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Nos Rendez-vous avec Dieu</span>
+                <h2 class="section-title">Calendrier des Programmes</h2>
+                <div class="title-bar mx-auto"></div>
+                <p class="section-desc">Rejoignez-nous lors de nos différents cultes et réunions de prières hebdomadaires.</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-container reveal-up">
+                <div class="tab-navigation" role="tablist">
+                    <button class="tab-btn active" id="tab-weekly" role="tab" aria-selected="true" aria-controls="weekly-pane">
+                        <i class="fa-regular fa-calendar-days"></i> Programmes Hebdomadaires
+                    </button>
+                    <button class="tab-btn" id="tab-special" role="tab" aria-selected="false" aria-controls="special-pane">
+                        <i class="fa-solid fa-star"></i> Programmes Spéciaux
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content Panes -->
+            <div class="tab-content mt-4">
+                <!-- Weekly Programs -->
+                <div class="tab-pane active" id="weekly-pane" role="tabpanel">
+                    <div class="programs-grid">
+                        
+                        <!-- Lundi -->
+                        <div class="program-card reveal-up" data-delay="1">
+                            <div class="prog-day">Lundi</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 20h00 - 21h30</div>
+                            <h3 class="prog-title">Programme des hommes</h3>
+                            <p class="prog-desc">Réunion d'édification, de partage et de prière réservée aux hommes de l'église.</p>
+                            <div class="prog-badge badge-men">Hommes</div>
+                        </div>
+
+                        <!-- Mardi -->
+                        <div class="program-card reveal-up" data-delay="2">
+                            <div class="prog-day">Mardi</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 20h00 - 21h30</div>
+                            <h3 class="prog-title">Enseignement Biblique</h3>
+                            <p class="prog-desc">Étude approfondie de la Parole de Dieu pour grandir spirituellement et connaître la vérité.</p>
+                            <div class="prog-badge badge-all">Tous publics</div>
+                        </div>
+
+                        <!-- Mercredi -->
+                        <div class="program-card reveal-up" data-delay="3">
+                            <div class="prog-day">Mercredi</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 20h00 - 21h30</div>
+                            <h3 class="prog-title">Programme des femmes</h3>
+                            <p class="prog-desc">Moments d'intercession, d'apprentissage et de communion fraternelle pour les femmes.</p>
+                            <div class="prog-badge badge-women">Femmes</div>
+                        </div>
+
+                        <!-- Jeudi -->
+                        <div class="program-card highlight reveal-up" data-delay="4">
+                            <div class="prog-day">Jeudi</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 20h00 - 21h30</div>
+                            <h3 class="prog-title">Prière de Combat & Délivrance</h3>
+                            <p class="prog-desc">Séance intense d'intercession et de combat spirituel pour briser les liens et proclamer la liberté.</p>
+                            <div class="prog-badge badge-power">Délivrance</div>
+                        </div>
+
+                        <!-- Vendredi (Rencontres) -->
+                        <div class="program-card reveal-up" data-delay="5">
+                            <div class="prog-day">Vendredi</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 14h00 - 17h00</div>
+                            <h3 class="prog-title">Rencontres avec le Pasteur</h3>
+                            <p class="prog-desc">Entretiens individuels, conseils spirituels et prières personnalisées avec le Pasteur Constantin KPOGBA.</p>
+                            <div class="prog-badge badge-office">Bureau</div>
+                        </div>
+
+                        <!-- Dimanche (Culte) -->
+                        <div class="program-card highlight-gold reveal-up" data-delay="6">
+                            <div class="prog-day">Dimanche</div>
+                            <div class="prog-time"><i class="fa-regular fa-clock"></i> 9h00 - 12h30</div>
+                            <h3 class="prog-title">Culte de Louange & Adoration</h3>
+                            <p class="prog-desc">Célébration dominicale, louange inspirée, adoration intense et prédication de l'Évangile.</p>
+                            <div class="prog-badge badge-worship">Culte principal</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Special Programs -->
+                <div class="tab-pane" id="special-pane" role="tabpanel">
+                    <div class="special-programs-container">
+                        
+                        <!-- Monthly Vigil -->
+                        <div class="special-program-card reveal-up">
+                            <div class="sp-date">
+                                <span class="sp-day">V</span>
+              <span class="sp-month">Mensuel</span>
+                            </div>
+                            <div class="sp-content">
+                                <span class="sp-tag">Grande Veillée de Prière</span>
+                                <h3>Tous les derniers Vendredis du Mois</h3>
+                                <p class="sp-time"><i class="fa-regular fa-clock"></i> 00h00 - 04h00 (Minuit à 4h du matin)</p>
+                                <p class="sp-desc">Une nuit entière dans la présence de Dieu : prières de percée, brisement de malédictions, louange nocturne et intercession prophétique.</p>
+                            </div>
+                        </div>
+
+                        <!-- Crusade Mock -->
+                        <div class="special-program-card reveal-up" data-delay="1">
+                            <div class="sp-date">
+                                <span class="sp-day">S</span>
+                                <span class="sp-month">Spécial</span>
+                            </div>
+                            <div class="sp-content">
+                                <span class="sp-tag">Séminaire / Campagne</span>
+                                <h3>Programmes Spéciaux de Fin d'Année et Festivités</h3>
+                                <p class="sp-time"><i class="fa-solid fa-circle-info"></i> Les dates et détails seront communiqués par le Pasteur</p>
+                                <p class="sp-desc">Restez à l'écoute pour nos programmes spéciaux d'impact spirituel, conventions annuelles et croisades d'évangélisation.</p>
+                                <a href="https://wa.me/22966304937" target="_blank" class="btn btn-link" id="special-program-info-btn">Demander des informations <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-top">
+            <div class="footer-grid">
+                
+                <div class="footer-brand-col">
+                    <div class="footer-logo">
+                        <img src="logo.jpg" alt="MIIFI Logo" class="footer-logo-img">
+                        <h3>MIIFI</h3>
+                    </div>
+                    <p class="footer-about">Ministère International d'intercession Fils d'Israël. Un phare spirituel à Cotonou, annonçant l'exaucement par le feu de la prière.</p>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100086230265988" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/22966304937" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="fondateur.html">Le Pasteur Fondateur</a></li>
+                        <li><a href="evangelistes.html">Les Évangélistes</a></li>
+                        <li><a href="jeunesse.html">Jeunesse MIIFI</a></li>
+                        <li><a href="programmes.html">Nos Programmes</a></li>
+                        <li><a href="dons.html">Soutenir le Ministère</a></li>
+                        <li><a href="galerie.html">Galerie Photos</a></li>
+                        <li><a href="radio.html">Radio MIIFI</a></li>
+                        <li><a href="contact.html">Nous Contacter</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact-col">
+                    <h4>Notre Adresse</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Akpakpa VON face à la Mairie d'Ayelawadje après la station MG en allant à Africando, 2ème maison à droite. Cotonou, Bénin.</p>
+                    <p><i class="fa-solid fa-phone"></i> +229 01 66 30 49 37</p>
+                    <p><i class="fa-solid fa-envelope"></i> a ajouter (contact administratif)</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 MIIFI - Ministère International d'intercession Fils d'Israël. Tous droits réservés.</p>
+                <p>Propulsé dans la Foi. Conçu pour la gloire de Dieu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="js/programmes.js"></script>
+</body>
+</html>
