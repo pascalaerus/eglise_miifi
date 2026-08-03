@@ -1577,4 +1577,29 @@ select.form-control {
     .footer-grid {
         grid-template-columns: 2fr 1fr 2fr;
     }
+
+    .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(11, 27, 61, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
 }
