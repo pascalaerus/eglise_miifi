@@ -48,6 +48,7 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: 38px; /* espace reserve pour le bandeau radio fixe */
 }
 
 img {
@@ -299,10 +300,101 @@ a {
 }
 
 
+/* --- Radio Marquee (bandeau defilant) --- */
+.radio-marquee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 38px;
+    z-index: 1200;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary) 50%, var(--primary-dark));
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    display: flex;
+    align-items: center;
+}
+
+.radio-marquee .marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    text-decoration: none;
+    white-space: nowrap;
+    animation: marquee-scroll 24s linear infinite;
+    will-change: transform;
+}
+
+.radio-marquee:hover .marquee-track,
+.radio-marquee .marquee-track:focus-visible {
+    animation-play-state: paused;
+}
+
+.marquee-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 30px;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--accent-light);
+}
+
+.marquee-item strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.marquee-item i {
+    color: var(--accent);
+    font-size: 12px;
+}
+
+.marquee-sep {
+    color: var(--accent-dark);
+    opacity: 0.55;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #ff3b3b;
+    animation: live-pulse 1.6s ease-out infinite;
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes live-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0.55); }
+    70% { box-shadow: 0 0 0 7px rgba(255, 59, 59, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0); }
+}
+
+@media (max-width: 575px) {
+    .marquee-item {
+        font-size: 11.5px;
+        padding: 0 20px;
+        gap: 7px;
+    }
+}
+
 /* --- Header / Navigation --- */
 .main-header {
     position: fixed;
-    top: 0;
+    top: 38px;
     left: 0;
     width: 100%;
     z-index: 1000;
