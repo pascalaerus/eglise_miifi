@@ -97,47 +97,236 @@
         </div>
     </div>
 
-    <!-- Photo Gallery Section -->
+    <!-- Photo & Video Gallery Section -->
 <section class="section bg-light gallery-section" id="gallery">
     <div class="container">
         <div class="section-header text-center">
             <span class="section-subtitle">Nos Moments Forts</span>
-            <h2 class="section-title">Galerie Photos</h2>
+            <h2 class="section-title">Galerie Photos & Vidéos</h2>
             <div class="title-bar mx-auto"></div>
-            <p class="section-desc">Revivez en images nos cultes, programmes et moments de communion fraternelle.</p>
+            <p class="section-desc">Revivez en images et en vidéos nos cultes, programmes et moments de communion fraternelle.</p>
         </div>
 
-        <div class="gallery-grid mt-5">
-            <div class="gallery-item reveal-up"><img src="photo1.jpg" alt="Photo MIIFI 1"></div>
-            <div class="gallery-item reveal-up" data-delay="1"><img src="photo2.jpg" alt="Photo MIIFI 2"></div>
-            <div class="gallery-item reveal-up" data-delay="2"><img src="photo3.jpg" alt="Photo MIIFI 3"></div>
-            <div class="gallery-item reveal-up" data-delay="3"><img src="photo4.jpg" alt="Photo MIIFI 4"></div>
-            <div class="gallery-item reveal-up" data-delay="4"><img src="photo5.jpg" alt="Photo MIIFI 5"></div>
-            <div class="gallery-item reveal-up" data-delay="5"><img src="photo6.jpg" alt="Photo MIIFI 6"></div>
-            <div class="gallery-item reveal-up" data-delay="6"><img src="photo7.jpg" alt="Photo MIIFI 7"></div>
-            <div class="gallery-item reveal-up" data-delay="7"><img src="photo8.jpg" alt="Photo MIIFI 8"></div>
-            <div class="gallery-item reveal-up" data-delay="8"><img src="photo9.jpg" alt="Photo MIIFI 9"></div>
-            <div class="gallery-item reveal-up" data-delay="9"><img src="photo10.jpg" alt="Photo MIIFI 10"></div>
-            <div class="gallery-item reveal-up" data-delay="10"><img src="photo11.jpg" alt="Photo MIIFI 11"></div>
-            <div class="gallery-item reveal-up" data-delay="11"><img src="photo12.jpg" alt="Photo MIIFI 12"></div>
-            <div class="gallery-item reveal-up" data-delay="12"><img src="photo13.jpg" alt="Photo MIIFI 13"></div>
-            <div class="gallery-item reveal-up" data-delay="13"><img src="photo14.jpg" alt="Photo MIIFI 14"></div>
-            <div class="gallery-item reveal-up" data-delay="14"><img src="photo15.jpg" alt="Photo MIIFI 15"></div>
-            <div class="gallery-item reveal-up" data-delay="15"><img src="photo16.jpg" alt="Photo MIIFI 16"></div>
-            <div class="gallery-item reveal-up" data-delay="16"><img src="photo17.jpg" alt="Photo MIIFI 17"></div>
-            <div class="gallery-item reveal-up" data-delay="17"><img src="photo18.jpg" alt="Photo MIIFI 18"></div>
-            <div class="gallery-item reveal-up" data-delay="18"><img src="photo19.jpg" alt="Photo MIIFI 19"></div>
-            <div class="gallery-item reveal-up" data-delay="19"><img src="photo20.jpg" alt="Photo MIIFI 20"></div>
-            <div class="gallery-item reveal-up" data-delay="20"><img src="photo21.jpg" alt="Photo MIIFI 21"></div>
-            <div class="gallery-item reveal-up" data-delay="21"><img src="photo22.jpg" alt="Photo MIIFI 22"></div>
-            <div class="gallery-item reveal-up" data-delay="22"><img src="photo23.jpg" alt="Photo MIIFI 23"></div>
-            <div class="gallery-item reveal-up" data-delay="23"><img src="photo24.jpg" alt="Photo MIIFI 24"></div>
-            <div class="gallery-item reveal-up" data-delay="24"><img src="photo25.jpg" alt="Photo MIIFI 25"></div>
-            <div class="gallery-item reveal-up" data-delay="25"><img src="photo26.jpg" alt="Photo MIIFI 26"></div>
-            <div class="gallery-item reveal-up" data-delay=26"><img src="photo27.jpg" alt="Photo MIIFI 27"></div>
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i> Tout</button>
+            <button class="filter-btn" data-filter="photo"><i class="fa-solid fa-image"></i> Photos</button>
+            <button class="filter-btn" data-filter="video"><i class="fa-solid fa-video"></i> Vidéos</button>
+        </div>
+
+        <div class="gallery-grid mt-5" id="gallery-grid">
+            <div class="gallery-item" data-type="photo" data-src="photo1.jpg" data-alt="Photo MIIFI 1">
+                <img src="photo1.jpg" alt="Photo MIIFI 1" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 1</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo2.jpg" data-alt="Photo MIIFI 2">
+                <img src="photo2.jpg" alt="Photo MIIFI 2" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 2</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo3.jpg" data-alt="Photo MIIFI 3">
+                <img src="photo3.jpg" alt="Photo MIIFI 3" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 3</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo4.jpg" data-alt="Photo MIIFI 4">
+                <img src="photo4.jpg" alt="Photo MIIFI 4" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 4</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo5.jpg" data-alt="Photo MIIFI 5">
+                <img src="photo5.jpg" alt="Photo MIIFI 5" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 5</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo6.jpg" data-alt="Photo MIIFI 6">
+                <img src="photo6.jpg" alt="Photo MIIFI 6" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 6</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo7.jpg" data-alt="Photo MIIFI 7">
+                <img src="photo7.jpg" alt="Photo MIIFI 7" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 7</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo8.jpg" data-alt="Photo MIIFI 8">
+                <img src="photo8.jpg" alt="Photo MIIFI 8" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 8</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo9.jpg" data-alt="Photo MIIFI 9">
+                <img src="photo9.jpg" alt="Photo MIIFI 9" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 9</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo10.jpg" data-alt="Photo MIIFI 10">
+                <img src="photo10.jpg" alt="Photo MIIFI 10" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 10</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo11.jpg" data-alt="Photo MIIFI 11">
+                <img src="photo11.jpg" alt="Photo MIIFI 11" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 11</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo12.jpg" data-alt="Photo MIIFI 12">
+                <img src="photo12.jpg" alt="Photo MIIFI 12" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 12</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo13.jpg" data-alt="Photo MIIFI 13">
+                <img src="photo13.jpg" alt="Photo MIIFI 13" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 13</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo14.jpg" data-alt="Photo MIIFI 14">
+                <img src="photo14.jpg" alt="Photo MIIFI 14" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 14</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo15.jpg" data-alt="Photo MIIFI 15">
+                <img src="photo15.jpg" alt="Photo MIIFI 15" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 15</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo16.jpg" data-alt="Photo MIIFI 16">
+                <img src="photo16.jpg" alt="Photo MIIFI 16" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 16</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo17.jpg" data-alt="Photo MIIFI 17">
+                <img src="photo17.jpg" alt="Photo MIIFI 17" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 17</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo18.jpg" data-alt="Photo MIIFI 18">
+                <img src="photo18.jpg" alt="Photo MIIFI 18" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 18</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo19.jpg" data-alt="Photo MIIFI 19">
+                <img src="photo19.jpg" alt="Photo MIIFI 19" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 19</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo20.jpg" data-alt="Photo MIIFI 20">
+                <img src="photo20.jpg" alt="Photo MIIFI 20" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 20</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo21.jpg" data-alt="Photo MIIFI 21">
+                <img src="photo21.jpg" alt="Photo MIIFI 21" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 21</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo22.jpg" data-alt="Photo MIIFI 22">
+                <img src="photo22.jpg" alt="Photo MIIFI 22" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 22</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo23.jpg" data-alt="Photo MIIFI 23">
+                <img src="photo23.jpg" alt="Photo MIIFI 23" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 23</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo24.jpg" data-alt="Photo MIIFI 24">
+                <img src="photo24.jpg" alt="Photo MIIFI 24" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 24</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo25.jpg" data-alt="Photo MIIFI 25">
+                <img src="photo25.jpg" alt="Photo MIIFI 25" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 25</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo26.jpg" data-alt="Photo MIIFI 26">
+                <img src="photo26.jpg" alt="Photo MIIFI 26" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 26</span></div>
+            </div>
+            <div class="gallery-item" data-type="photo" data-src="photo27.jpg" data-alt="Photo MIIFI 27">
+                <img src="photo27.jpg" alt="Photo MIIFI 27" loading="lazy">
+                <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-image"></i> Photo 27</span></div>
+            </div>
+            <div class="gallery-item gallery-item-video" data-type="video" data-src="video1.mp4">
+                <video src="video1.mp4" preload="metadata" muted playsinline></video>
+                <div class="gallery-badge"><i class="fa-solid fa-circle"></i> Vidéo</div>
+                <div class="gallery-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Vidéo 1</span></div>
+            </div>
+            <div class="gallery-item gallery-item-video" data-type="video" data-src="video2.mp4">
+                <video src="video2.mp4" preload="metadata" muted playsinline></video>
+                <div class="gallery-badge"><i class="fa-solid fa-circle"></i> Vidéo</div>
+                <div class="gallery-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Vidéo 2</span></div>
+            </div>
+            <div class="gallery-item gallery-item-video" data-type="video" data-src="video3.mp4">
+                <video src="video3.mp4" preload="metadata" muted playsinline></video>
+                <div class="gallery-badge"><i class="fa-solid fa-circle"></i> Vidéo</div>
+                <div class="gallery-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Vidéo 3</span></div>
+            </div>
+            <div class="gallery-item gallery-item-video" data-type="video" data-src="video4.mp4">
+                <video src="video4.mp4" preload="metadata" muted playsinline></video>
+                <div class="gallery-badge"><i class="fa-solid fa-circle"></i> Vidéo</div>
+                <div class="gallery-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Vidéo 4</span></div>
+            </div>
+            <div class="gallery-item gallery-item-video" data-type="video" data-src="video5.mp4">
+                <video src="video5.mp4" preload="metadata" muted playsinline></video>
+                <div class="gallery-badge"><i class="fa-solid fa-circle"></i> Vidéo</div>
+                <div class="gallery-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Vidéo 5</span></div>
+            </div>
+            <div class="gallery-item gallery-item-video" data-type="video" data-src="video6.mp4">
+                <video src="video6.mp4" preload="metadata" muted playsinline></video>
+                <div class="gallery-badge"><i class="fa-solid fa-circle"></i> Vidéo</div>
+                <div class="gallery-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Vidéo 6</span></div>
+            </div>
+            <div class="gallery-item gallery-item-video" data-type="video" data-src="video7.mp4">
+                <video src="video7.mp4" preload="metadata" muted playsinline></video>
+                <div class="gallery-badge"><i class="fa-solid fa-circle"></i> Vidéo</div>
+                <div class="gallery-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Vidéo 7</span></div>
+            </div>
+            <div class="gallery-item gallery-item-video" data-type="video" data-src="video8.mp4">
+                <video src="video8.mp4" preload="metadata" muted playsinline></video>
+                <div class="gallery-badge"><i class="fa-solid fa-circle"></i> Vidéo</div>
+                <div class="gallery-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Vidéo 8</span></div>
+            </div>
+            <div class="gallery-item gallery-item-video" data-type="video" data-src="video9.mp4">
+                <video src="video9.mp4" preload="metadata" muted playsinline></video>
+                <div class="gallery-badge"><i class="fa-solid fa-circle"></i> Vidéo</div>
+                <div class="gallery-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Vidéo 9</span></div>
+            </div>
+            <div class="gallery-item gallery-item-video" data-type="video" data-src="video10.mp4">
+                <video src="video10.mp4" preload="metadata" muted playsinline></video>
+                <div class="gallery-badge"><i class="fa-solid fa-circle"></i> Vidéo</div>
+                <div class="gallery-play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Vidéo 10</span></div>
+            </div>
+        </div>
+
+        <div class="gallery-empty" id="gallery-empty">
+            <i class="fa-solid fa-inbox"></i>
+            <p>Aucun élément dans cette catégorie pour le moment.</p>
         </div>
     </div>
 </section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-backdrop"></div>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lightbox-content" id="lightbox-content"></div>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -189,5 +378,6 @@
     </footer>
 
     <script src="common.js"></script>
+    <script src="js/galerie.js"></script>
 </body>
 </html>
