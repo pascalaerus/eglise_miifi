@@ -1,66 +1,135 @@
 /* ===== MIIFI - Styles page: evangelistes ===== */
 
-/* --- Evangelists Section --- */
-.evangelists-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 32px;
+/* --- Grille des 3 evangelistes --- */
+.evangelists-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 20px;
 }
 
-.evangelist-card {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background-color: var(--bg-white);
-    padding: 20px;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    border: 1px solid transparent;
-}
-
-.evangelist-card:hover {
-    transform: translateY(-3px);
+.evangelist-frame {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--primary-dark);
     box-shadow: var(--shadow-md);
-    border-color: rgba(212, 175, 55, 0.2);
+    border: 2.5px solid rgba(212, 175, 55, 0.3);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
 }
 
-.ev-avatar {
-    width: 60px;
-    height: 60px;
-    background-color: var(--bg-light);
+.evangelist-frame:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+}
+
+.evangelist-photo-wrap {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.evangelist-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.evangelist-frame:hover .evangelist-photo-wrap img {
+    transform: scale(1.08);
+}
+
+.evangelist-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(7, 18, 45, 0.95) 0%, rgba(7, 18, 45, 0.55) 35%, transparent 70%);
+}
+
+.evangelist-number-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
+    background: rgba(212, 175, 55, 0.92);
+    color: var(--primary-dark);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    color: var(--primary);
-    border: 2px solid var(--accent-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.ev-details h4 {
+.evangelist-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 22px 20px 20px;
+    z-index: 1;
+}
+
+.evangelist-name {
     font-family: var(--font-heading);
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--primary-dark);
-}
-
-.ev-role {
-    font-size: 13px;
-    color: var(--text-muted);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--bg-white);
     margin-bottom: 4px;
 }
 
-.ev-contact {
-    font-size: 14px;
-    color: var(--primary-light);
+.evangelist-role {
+    font-size: 13px;
+    color: var(--accent-light);
     font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    letter-spacing: 0.3px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
-.ev-contact:hover {
-    color: var(--accent-dark);
+.evangelist-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    color: var(--bg-white);
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: var(--transition);
+}
+
+.evangelist-contact i {
+    color: var(--accent);
+}
+
+.evangelist-contact:hover {
+    background: var(--accent);
+    color: var(--primary-dark);
+    border-color: var(--accent);
+}
+
+.evangelist-contact:hover i {
+    color: var(--primary-dark);
+}
+
+@media (min-width: 576px) {
+    .evangelists-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .evangelists-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
