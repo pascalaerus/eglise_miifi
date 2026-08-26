@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         items.forEach((item, index) => {
             const type = item.getAttribute('data-type');
-            const shouldShow = filter === 'all' || type === filter;
+            const category = item.getAttribute('data-category');
+            const shouldShow = filter === 'all' || type === filter || category === filter;
 
             if (shouldShow) {
                 visibleCount++;
