@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Galerie - MIIFI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+        body { background: var(--primary-dark, #07122D); min-height: 100vh; }
+        .admin-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+            color: #f0f0f0;
+        }
+        .admin-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent, #D4AF37);
+            margin-bottom: 6px;
+        }
+        .admin-sub { color: #b9c0d4; margin-bottom: 30px; font-size: 0.95rem; }
+        .admin-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .admin-card h2 {
+            font-size: 1.1rem;
+            color: #fff;
+            margin: 0 0 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .admin-card h2 i { color: var(--accent, #D4AF37); }
+        label { display: block; margin: 12px 0 6px; font-size: 0.9rem; color: #cdd3e6; }
+        input[type="password"], input[type="text"], input[type="file"], select {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            font-size: 0.95rem;
+        }
+        .btn-admin {
+            margin-top: 14px;
+            padding: 11px 20px;
+            border: none;
+            border-radius: 8px;
+            background: var(--accent, #D4AF37);
+            color: #1a1a1a;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        .btn-admin:disabled { opacity: 0.6; cursor: not-allowed; }
+        .admin-status { margin-top: 12px; padding: 10px 12px; border-radius: 8px; font-size: 0.9rem; display: none; }
+        .admin-status.ok { background: rgba(46, 160, 67, 0.15); color: #7ee2a1; display: block; }
+        .admin-status.error { background: rgba(220, 53, 69, 0.15); color: #ff9aa5; display: block; }
+        .gate-box { max-width: 360px; margin: 80px auto; text-align: center; }
+        .upload-row, .manage-row { font-size: 0.85rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .manage-row { display: flex; align-items: center; gap: 10px; }
+        .manage-alt { flex: 1; color: #fff; }
+        .manage-category { color: #9aa4c4; font-size: 0.8rem; }
+        .manage-delete {
+            background: rgba(220,53,69,0.2);
+            color: #ff9aa5;
+            border: none;
+            border-radius: 6px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .help-text { font-size: 0.82rem; color: #8b93ad; margin-top: 6px; line-height: 1.5; }
+        .warn-box {
+            background: rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 10px;
+            padding: 14px 16px;
+            font-size: 0.85rem;
+            color: #f3e5ab;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="admin-wrap">
+
+    <!-- Verrou mot de passe (protection legere) -->
+    <div id="admin-gate" class="gate-box">
+        <div class="admin-title" style="justify-content:center;"><i class="fa-solid fa-lock"></i> Admin MIIFI</div>
+        <p class="admin-sub">Zone reservee - Galerie photos & videos</p>
+        <form id="gate-form" class="admin-card">
+            <label for="gate-password">Mot de passe</label>
+            <input type="password" id="gate-password" autocomplete="current-password" required>
+            <button type="submit" class="btn-admin">Entrer</button>
+            <p id="gate-error" style="color:#ff9aa5; margin-top:10px; font-size:0.85rem;"></p>
+        </form>
+    </div>
+
+    <!-- Panneau admin -->
+    <div id="admin-panel" style="display:none;">
+        <div class="admin-title"><i class="fa-solid fa-photo-film"></i> Galerie MIIFI - Admin</div>
+        <p class="admin-sub">Importer des photos et videos (tout format) vers la galerie du site.
+            <button id="logout-btn" class="btn-admin" style="float:right; padding:6px 14px;">Se deconnecter</button>
+        </p>
+
+        <div class="warn-box">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            L'ecriture Firestore est ouverte a tous (pas d'authentification), la seule protection
+            est ce mot de passe local et le fait que l'URL de cette page ne soit partagee nulle
+            part. Ne mets aucun lien vers admin.html dans le menu du site.
+        </div>
+
+        <div class="admin-card">
+            <h2><i class="fa-solid fa-clock-rotate-left"></i> Import unique des anciens medias</h2>
+            <p class="help-text">A utiliser une seule fois pour transferer les 140 photos/videos deja presentes sur le site vers Firestore.</p>
+            <button id="migrate-btn" class="btn-admin">Importer les anciens medias</button>
+            <p id="migrate-status" class="admin-status"></p>
+        </div>
+
+        <div class="admin-card">
+            <h2><i class="fa-solid fa-upload"></i> Ajouter des medias</h2>
+            <label for="media-files">Fichiers (photos ou videos, plusieurs a la fois, tout format)</label>
+            <input type="file" id="media-files" multiple accept="image/*,video/*">
+
+            <label for="media-category">Categorie</label>
+            <select id="media-category">
+                <option value="">Photo / Video generale</option>
+                <option value="graduation">Graduation</option>
+                <option value="video">Video</option>
+            </select>
+            <p class="help-text">Le titre affiche sur chaque element reprend le nom du fichier.</p>
+
+            <button id="upload-btn" class="btn-admin"><i class="fa-solid fa-cloud-arrow-up"></i> Publier sur la galerie</button>
+            <div id="upload-progress-list" style="margin-top:12px;"></div>
+            <p id="upload-status" class="admin-status"></p>
+        </div>
+
+        <div class="admin-card">
+            <h2><i class="fa-solid fa-list"></i> Elements existants</h2>
+            <p id="manage-status" class="admin-status"></p>
+            <div id="manage-list"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
