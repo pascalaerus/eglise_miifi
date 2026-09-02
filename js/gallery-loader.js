@@ -1,7 +1,9 @@
 /**
- * Charge la galerie depuis Firebase Firestore (collection "gallery") et
- * construit la grille. Chaque photo/video ajoutee depuis admin.html y
- * apparait automatiquement. Une fois les elements injectes, on declenche
+ * Charge la galerie depuis Firebase Firestore :
+ * - collection "gallery" : les photos/videos
+ * - collection "categories" : les categories/sections creees depuis admin.html
+ *   (en plus des filtres fixes Tout/Photos/Videos deja dans le HTML)
+ * Construit la grille + les boutons de filtre dynamiques, puis declenche
  * "gallery:loaded" pour que js/galerie.js (filtres + lightbox) s'initialise.
  */
 (function () {
@@ -46,6 +48,45 @@
         return el;
     }
 
+    function buildFilterButton(slug, label) {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.setAttribute('data-filter', slug);
+        btn.innerHTML = `<i class="fa-solid fa-tag"></i> ${escapeHtml(label)}`;
+        return btn;
+    }
+
+    async function loadCategoryFilters(db) {
+        const filtersBar = document.getElementById('gallery-filters');
+        if (!filtersBar) return;
+        try {
+            const snapshot = await db.collection('categories').orderBy('createdAt', 'asc').get();
+            const fragment = document.createDocumentFragment();
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                if (!data || !data.label) return;
+                fragment.appendChild(buildFilterButton(doc.id, data.label));
+            });
+            filtersBar.appendChild(fragment);
+        } catch (err) {
+            console.error('Erreur de chargement des categories :', err);
+        }
+    }
+
+    async function loadGalleryItems(db) {
+        const grid = document.getElementById('gallery-grid');
+        if (!grid) return;
+        const snapshot = await db.collection('gallery').orderBy('createdAt', 'asc').get();
+        const fragment = document.createDocumentFragment();
+        snapshot.forEach((doc) => {
+            const entry = doc.data();
+            if (!entry || !entry.src) return;
+            const el = entry.type === 'video' ? buildVideoItem(entry) : buildPhotoItem(entry);
+            fragment.appendChild(el);
+        });
+        grid.appendChild(fragment);
+    }
+
     async function loadGallery() {
         const grid = document.getElementById('gallery-grid');
         const loading = document.getElementById('gallery-loading');
@@ -56,16 +97,11 @@
         try {
             if (!firebase.apps.length) firebase.initializeApp(FIREBASE_CONFIG);
             const db = firebase.firestore();
-            const snapshot = await db.collection('gallery').orderBy('createdAt', 'asc').get();
-
-            const fragment = document.createDocumentFragment();
-            snapshot.forEach((doc) => {
-                const entry = doc.data();
-                if (!entry || !entry.src) return;
-                const el = entry.type === 'video' ? buildVideoItem(entry) : buildPhotoItem(entry);
-                fragment.appendChild(el);
-            });
-            grid.appendChild(fragment);
+            // Les filtres doivent exister dans le DOM AVANT de declencher
+            // gallery:loaded, sinon js/galerie.js ne leur attachera pas
+            // les clics.
+            await loadCategoryFilters(db);
+            await loadGalleryItems(db);
         } catch (err) {
             console.error('Erreur de chargement de la galerie :', err);
         } finally {

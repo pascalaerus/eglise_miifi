@@ -131,17 +131,22 @@
             <label for="media-files">Fichiers (photos ou videos, plusieurs a la fois, tout format)</label>
             <input type="file" id="media-files" multiple accept="image/*,video/*">
 
-            <label for="media-category">Categorie</label>
+            <label for="media-category">Categorie / section</label>
             <select id="media-category">
                 <option value="">Photo / Video generale</option>
-                <option value="graduation">Graduation</option>
-                <option value="video">Video</option>
+                <option value="__new__">+ Creer une nouvelle categorie...</option>
             </select>
-            <p class="help-text">Le titre affiche sur chaque element reprend le nom du fichier.</p>
+            <input type="text" id="new-category-input" placeholder="Nom de la nouvelle categorie (ex: 40 jours de jeûne et prière (2026))" style="display:none; margin-top:8px;">
+            <p class="help-text">Le titre affiche sur chaque element reprend le nom du fichier. Une nouvelle categorie que tu crees ici apparait automatiquement comme filtre sur la page galerie.</p>
 
             <button id="upload-btn" class="btn-admin"><i class="fa-solid fa-cloud-arrow-up"></i> Publier sur la galerie</button>
             <div id="upload-progress-list" style="margin-top:12px;"></div>
             <p id="upload-status" class="admin-status"></p>
+        </div>
+
+        <div class="admin-card">
+            <h2><i class="fa-solid fa-tags"></i> Categories existantes</h2>
+            <div id="categories-list"></div>
         </div>
 
         <div class="admin-card">

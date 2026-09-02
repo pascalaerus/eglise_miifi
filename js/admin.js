@@ -44,6 +44,16 @@ async function sha256Hex(text) {
     return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
+function slugify(label) {
+    return label
+        .toString()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // enlever les accents
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '')
+        .slice(0, 60) || ('categorie-' + Date.now());
+}
+
 function showStatus(el, message, type) {
     el.textContent = message;
     el.className = 'admin-status ' + (type || '');
@@ -126,12 +136,100 @@ async function uploadToCloudinary(file, onProgress) {
 }
 
 // ---------------------------------------------------------------------
-// 3. Formulaire d'ajout -> ecrit dans Firestore
+// 3. Categories : chargement, creation a la volee, liste, suppression
+// ---------------------------------------------------------------------
+
+async function loadCategoriesIntoSelect() {
+    const select = document.getElementById('media-category');
+    const newOption = select.querySelector('option[value="__new__"]');
+    // On retire les anciennes options dynamiques (tout sauf "" et "__new__")
+    Array.from(select.querySelectorAll('option')).forEach((opt) => {
+        if (opt.value !== '' && opt.value !== '__new__') opt.remove();
+    });
+
+    const snapshot = await db.collection('categories').orderBy('createdAt', 'asc').get();
+    snapshot.forEach((doc) => {
+        const data = doc.data();
+        if (!data || !data.label) return;
+        const opt = document.createElement('option');
+        opt.value = doc.id;
+        opt.textContent = data.label;
+        select.insertBefore(opt, newOption);
+    });
+}
+
+async function loadCategoriesList() {
+    const list = document.getElementById('categories-list');
+    if (!list) return;
+    try {
+        const snapshot = await db.collection('categories').orderBy('createdAt', 'asc').get();
+        list.innerHTML = '';
+        if (snapshot.empty) {
+            list.innerHTML = '<p class="help-text">Aucune categorie personnalisee pour l\'instant.</p>';
+            return;
+        }
+        snapshot.forEach((doc) => {
+            const data = doc.data();
+            const row = document.createElement('div');
+            row.className = 'manage-row';
+            row.innerHTML = `
+                <span class="manage-alt">${data.label || doc.id}</span>
+                <button class="manage-delete" data-cat-id="${doc.id}">Supprimer</button>
+            `;
+            list.appendChild(row);
+        });
+        list.querySelectorAll('.manage-delete').forEach((btn) => {
+            btn.addEventListener('click', async () => {
+                if (!confirm('Supprimer cette categorie ? Les medias qui l\'utilisent resteront mais ne seront plus filtrables par ce bouton.')) return;
+                btn.disabled = true;
+                try {
+                    await db.collection('categories').doc(btn.getAttribute('data-cat-id')).delete();
+                    loadCategoriesList();
+                    loadCategoriesIntoSelect();
+                } catch (err) {
+                    alert('Erreur : ' + err.message);
+                    btn.disabled = false;
+                }
+            });
+        });
+    } catch (err) {
+        list.innerHTML = '<p class="help-text">Erreur de chargement des categories.</p>';
+    }
+}
+
+async function resolveCategory(select, newInput) {
+    if (select.value !== '__new__') return select.value; // '' ou slug existant
+    const label = newInput.value.trim();
+    if (!label) throw new Error('Donne un nom a la nouvelle categorie.');
+    const slug = slugify(label);
+    const docRef = db.collection('categories').doc(slug);
+    const existing = await docRef.get();
+    if (!existing.exists) {
+        await docRef.set({ label, createdAt: firebase.firestore.FieldValue.serverTimestamp() });
+    }
+    return slug;
+}
+
+function initCategoryUI() {
+    const select = document.getElementById('media-category');
+    const newInput = document.getElementById('new-category-input');
+    if (!select) return;
+    select.addEventListener('change', () => {
+        newInput.style.display = select.value === '__new__' ? 'block' : 'none';
+        if (select.value === '__new__') newInput.focus();
+    });
+    loadCategoriesIntoSelect();
+    loadCategoriesList();
+}
+
+// ---------------------------------------------------------------------
+// 4. Formulaire d'ajout -> ecrit dans Firestore
 // ---------------------------------------------------------------------
 
 function initUploadForm() {
     const filesInput = document.getElementById('media-files');
     const categorySelect = document.getElementById('media-category');
+    const newCategoryInput = document.getElementById('new-category-input');
     const uploadBtn = document.getElementById('upload-btn');
     const status = document.getElementById('upload-status');
     const progressList = document.getElementById('upload-progress-list');
@@ -148,6 +246,8 @@ function initUploadForm() {
         showStatus(status, 'Envoi en cours...', '');
 
         try {
+            const category = await resolveCategory(categorySelect, newCategoryInput);
+
             for (const file of files) {
                 const row = document.createElement('div');
                 row.className = 'upload-row';
@@ -163,7 +263,7 @@ function initUploadForm() {
                     type,
                     src: result.secure_url,
                     alt: file.name.replace(/\.[^.]+$/, ''),
-                    category: categorySelect.value || type,
+                    category: category || type,
                     createdAt: firebase.firestore.FieldValue.serverTimestamp()
                 });
 
@@ -172,7 +272,12 @@ function initUploadForm() {
 
             showStatus(status, 'Media(s) publies. Ils apparaissent immediatement sur galerie.html.', 'ok');
             filesInput.value = '';
+            newCategoryInput.value = '';
+            newCategoryInput.style.display = 'none';
+            categorySelect.value = '';
             loadManageList();
+            loadCategoriesIntoSelect();
+            loadCategoriesList();
         } catch (err) {
             console.error(err);
             showStatus(status, 'Erreur : ' + err.message, 'error');
@@ -239,6 +344,19 @@ function initMigration() {
         btn.disabled = true;
         showStatus(status, 'Import en cours...', '');
         try {
+            // Categories de base utilisees par les anciens medias
+            const baseCategories = {
+                graduation: 'Graduation',
+                jeune40: "40 jours de jeûne et prière (2026)"
+            };
+            for (const [slug, label] of Object.entries(baseCategories)) {
+                const ref = db.collection('categories').doc(slug);
+                const existing = await ref.get();
+                if (!existing.exists) {
+                    await ref.set({ label, createdAt: firebase.firestore.FieldValue.serverTimestamp() });
+                }
+            }
+
             const res = await fetch('gallery-data.json', { cache: 'no-store' });
             const items = await res.json();
             let count = 0;
@@ -255,6 +373,8 @@ function initMigration() {
             }
             showStatus(status, `${count} anciens medias importes avec succes.`, 'ok');
             loadManageList();
+            loadCategoriesIntoSelect();
+            loadCategoriesList();
         } catch (err) {
             showStatus(status, 'Erreur : ' + err.message, 'error');
         } finally {
@@ -269,6 +389,7 @@ function initMigration() {
 
 document.addEventListener('DOMContentLoaded', () => {
     initPasswordGate();
+    initCategoryUI();
     initUploadForm();
     initMigration();
 });
